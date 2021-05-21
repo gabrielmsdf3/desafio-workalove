@@ -25,6 +25,8 @@ Inicialmente começou só com um componente, o componente formulário, depois fo
 
  Além disso, ele vai coletando os dados e vai juntando, agregando eles para no final quando  estiver pronto para enviar esses dados chamar a propriedade de ao enviar que quem passou  foi meu app.js e esse app.js, ou quem quer que crie esse formulário pode decidir o que vai fazer com os dados que ele mesmo coletou e que no caso foi direcionado para o mockAPI via axios.
 
+ 
+
 
 Tecnologias utilizadas:
 reactJs
