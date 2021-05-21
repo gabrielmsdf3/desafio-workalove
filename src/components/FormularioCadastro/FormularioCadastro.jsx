@@ -1,10 +1,11 @@
-import { Step, StepLabel, Stepper, Typography } from "@material-ui/core"
+import { Step, StepLabel, Stepper } from "@material-ui/core"
 import React, { useEffect, useState } from "react"
 import Avaliacao from "../Avaliacao"
 import DadosData from "../DadosData"
 import DadosLocal from "../DadosLocal"
 import DadosPessoais from "../DadosPessoais"
 import DadosUsuario from "../DadosUsuario"
+import Obrigado from "../Obrigado"
 
 function FormularioCadastro({ aoEnviar }) {
   const [etapaAtual, setEtapaAtual] = useState(0)
@@ -21,7 +22,7 @@ function FormularioCadastro({ aoEnviar }) {
     <DadosData aoEnviar={coletarDados} />,
     <DadosUsuario aoEnviar={coletarDados} />,
     <Avaliacao aoEnviar={coletarDados}></Avaliacao>,
-    <Typography>Obrigado!</Typography>,
+    <Obrigado/>,
   ]
 
   function coletarDados(dados) {

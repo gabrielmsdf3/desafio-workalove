@@ -21,7 +21,6 @@ function DadosPessoais({ aoEnviar }) {
         onSubmit={(event) => {
           event.preventDefault()
           aoEnviar({ nome })
-          console.log({ nome })
         }}
       >
         <TextField
