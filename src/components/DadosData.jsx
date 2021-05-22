@@ -1,10 +1,32 @@
-import { TextField, Button,  Avatar } from "@material-ui/core"
-import React, { useState } from "react"
+import { TextField, Button, Avatar } from "@material-ui/core"
+import React, { useState, useContext } from "react"
 import avt from "../image/avatar-08.png"
 import Mensagem from "./Mensagem"
+import validacoesCadastro from "../contexts/validacoes"
+
 
 function DadosData({ aoEnviar }) {
   const [dataNascimento, setDataNascimento] = useState("")
+  const [erros, setErros] = useState({
+    dataNascimento: { valido: true, texto: "" },
+  })
+
+  const validacoes = useContext(validacoesCadastro)
+  function validarCampos(event) {
+    const { name, value } = event.target
+    const novoEstado = { ...erros }
+    novoEstado[name] = validacoes[name](value)
+    setErros(novoEstado)
+  }
+
+  function possoEnviar() {
+    for (let campo in erros) {
+      if (!erros[campo].valido) {
+        return false
+      }
+    }
+    return true
+  }
 
   return (
     <div style={{ height: "100px" }}>
@@ -20,7 +42,9 @@ function DadosData({ aoEnviar }) {
       <form
         onSubmit={(event) => {
           event.preventDefault()
-          aoEnviar({ dataNascimento })
+          if (possoEnviar()) {
+            aoEnviar({ dataNascimento })
+          }
         }}
       >
         <TextField
@@ -29,6 +53,9 @@ function DadosData({ aoEnviar }) {
             setDataNascimento(event.target.value)
           }}
           required
+          onBlur={validarCampos}
+          error={!erros.dataNascimento.valido}
+          helperText={erros.dataNascimento.texto}
           id="dataNascimento"
           name="dataNascimento"
           type="date"
@@ -36,6 +63,7 @@ function DadosData({ aoEnviar }) {
           margin="normal"
           fullWidth
         />
+
         <Button type="submit" variant="contained" color="primary">
           Próximo
         </Button>

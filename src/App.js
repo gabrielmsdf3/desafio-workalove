@@ -3,9 +3,10 @@ import "./App.css"
 import FormularioCadastro from "./components/FormularioCadastro/FormularioCadastro"
 import { Container, Typography } from "@material-ui/core"
 import "fontsource-roboto"
-import { validarEmail } from "./models/cadastro"
+import { validarEmail, validarNome, validarDataNascimento } from "./models/cadastro"
 import validacoesCadastro from "./contexts/validacoes"
 import api from "./api/api"
+
 
 class App extends Component {
   render() {
@@ -19,7 +20,7 @@ class App extends Component {
         >
           Formulário de cadastro
         </Typography>
-        <validacoesCadastro.Provider value={{ email: validarEmail }}>
+        <validacoesCadastro.Provider value={{ email: validarEmail, nome: validarNome, dataNascimento: validarDataNascimento }}>
           <FormularioCadastro aoEnviar={aoEnviarForm} />
         </validacoesCadastro.Provider>
       </Container>

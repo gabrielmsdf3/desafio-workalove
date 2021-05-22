@@ -60,11 +60,11 @@ export default function Avaliacao({ aoEnviar }) {
           onChangeActive={(event, newHover) => {
             setHover(newHover)
           }}
-          style={{ display: "flex", alignItems: "center" }}
+          style={{ display: "flex", alignItems: "center",width: "100px", height: "100px" }}
         />
         
         {nota !== null && (
-          <Box ml={2}>{labels[hover !== -1 ? hover : nota]}</Box>
+          <Box ml={1}>{labels[hover !== -1 ? hover : nota]}</Box>
         )}
 
         <Button type="submit" variant="contained" color="primary">
