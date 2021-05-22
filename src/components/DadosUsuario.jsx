@@ -1,4 +1,4 @@
-import { TextField, Button,  Avatar } from "@material-ui/core"
+import { TextField, Button, Avatar } from "@material-ui/core"
 import React, { useContext, useState } from "react"
 import validacoesCadastro from "../contexts/validacoes"
 import avt from "../image/avatar-08.png"

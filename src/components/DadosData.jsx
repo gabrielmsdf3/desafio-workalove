@@ -4,7 +4,6 @@ import avt from "../image/avatar-08.png"
 import Mensagem from "./Mensagem"
 import validacoesCadastro from "../contexts/validacoes"
 
-
 function DadosData({ aoEnviar }) {
   const [dataNascimento, setDataNascimento] = useState("")
   const [erros, setErros] = useState({

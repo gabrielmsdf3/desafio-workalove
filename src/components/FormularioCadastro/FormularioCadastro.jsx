@@ -22,7 +22,7 @@ function FormularioCadastro({ aoEnviar }) {
     <DadosData aoEnviar={coletarDados} />,
     <DadosUsuario aoEnviar={coletarDados} />,
     <Avaliacao aoEnviar={coletarDados}></Avaliacao>,
-    <Obrigado/>,
+    <Obrigado />,
   ]
 
   function coletarDados(dados) {
@@ -62,11 +62,3 @@ function FormularioCadastro({ aoEnviar }) {
 }
 
 export default FormularioCadastro
-
-/*
-Ao utilizamos o hook de useState indicamos para o React 
-que aquele componente quer guardar estado. Para isso são 
-devolvidas duas informações, a primeira é a referência 
-para o valor do estado atual e a segunda é a função que altera 
-esse estado.
-*/

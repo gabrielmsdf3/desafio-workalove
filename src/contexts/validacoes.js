@@ -4,7 +4,7 @@ const validacoesCadastro = React.createContext({
   dataNascimento: semValidacao,
   senha: semValidacao,
   nome: semValidacao,
-  email: semValidacao
+  email: semValidacao,
 })
 
 function semValidacao(dados) {

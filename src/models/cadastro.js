@@ -1,4 +1,4 @@
-import moment from 'moment'
+import moment from "moment"
 
 function validarEmail(email) {
   if (
@@ -20,8 +20,7 @@ function validarNome(nome) {
 }
 
 function validarDataNascimento(dataNascimento) {
-  
-  if (moment(dataNascimento).isAfter('2021-05-29')) {
+  if (moment(dataNascimento).isAfter("2021-05-29")) {
     return { valido: false, texto: "Digite uma data válida" }
   } else {
     return { valido: true, texto: "" }

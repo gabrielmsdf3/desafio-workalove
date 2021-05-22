@@ -36,7 +36,8 @@ function DadosPessoais({ aoEnviar }) {
         </Mensagem>
       </div>
 
-      <form onSubmit={(event) => {
+      <form
+        onSubmit={(event) => {
           event.preventDefault()
           if (possoEnviar()) {
             aoEnviar({ nome })

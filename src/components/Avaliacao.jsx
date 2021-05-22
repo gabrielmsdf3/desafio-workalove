@@ -47,7 +47,6 @@ export default function Avaliacao({ aoEnviar }) {
           </Mensagem>
         </div>
 
-        
         <Rating
           align="center"
           name="hoverfeedback"
@@ -60,9 +59,14 @@ export default function Avaliacao({ aoEnviar }) {
           onChangeActive={(event, newHover) => {
             setHover(newHover)
           }}
-          style={{ display: "flex", alignItems: "center",width: "100px", height: "100px" }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            width: "100px",
+            height: "100px",
+          }}
         />
-        
+
         {nota !== null && (
           <Box ml={1}>{labels[hover !== -1 ? hover : nota]}</Box>
         )}
